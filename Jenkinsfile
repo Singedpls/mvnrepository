@@ -1,41 +1,27 @@
-pipeline 
-{
-    agent any
+pipeline {
+    agent any   //any nodes 
 
-    stages 
-    {
-        stage('Build') 
-        {
-            steps 
-            {
-                echo 'Build App'
+    stages {
+        stage('Build App') {
+            steps {
+                echo 'Hello World'
             }
         }
-
-        stage('Test') 
-        {
-            steps 
-            {
-                echo 'Test App'
+        stage('Test') {
+            steps {
+                echo 'Test Maven Build'
             }
         }
-
-        stage('Deploy') 
-        {
-            steps 
-            {
-                echo 'Deploy App'
+        
+        stage('Deploy') {
+            steps {
+                echo 'Deploy'
             }
         }
     }
-
-    post
-    {
-
-    	always
-    	{
-    		emailext body: 'Summary', subject: 'Pipeline Status', to: 'selenium3bymukesh@gmail.com'
-    	}
-
+    post{
+        always{
+            emailext body: 'Error en Build', subject: 'Pipeline Status', to: 'humberto.estrada.cn@gmail.com'   
+        }
     }
 }

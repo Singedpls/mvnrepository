@@ -21,7 +21,7 @@ pipeline {
     }
     post{
         always{
-            emailext body: 'Error en Build', subject: 'Pipeline Status', to: 'humberto.estrada.cn@gmail.com'   
+            emailext body: 'Error en Build', subject: 'Pipeline Status', to: 'alumno@gmail.com'   
         }
     }
 }
